@@ -1,0 +1,37 @@
+.landing {
+    background-image: url('../images/BG6.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: inherit;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+.h1 {
+    font: small-caps bold 50px/1 sans-serif;
+    color: #be0506;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    
+}
+.landingbutton {
+    color: black;
+    background-color: #f9c784;
+    border-color: #f9c784;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 20px;
+    position: relative;
+    top: 40px;
+    left: 42%;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.landingbutton:hover {
+    color: #be0506;
+}

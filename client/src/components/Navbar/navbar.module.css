@@ -1,0 +1,13 @@
+.navbar {
+    background-color: #f5b82e;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+}
+.list{
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+    font-size: medium;
+
+}

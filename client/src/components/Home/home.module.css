@@ -1,0 +1,11 @@
+.home {
+    background-image: url('../images/homebg2.jpg');
+
+}
+
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -1,0 +1,23 @@
+.recipes {
+    background-color: #f9c784;
+    margin-left: 20px;
+    margin-top: 25px;
+    width: 350px;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid black;
+}
+.recipes:hover {
+    background-color: #fcaf58;    
+}
+
+.info{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}  
+.img{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+

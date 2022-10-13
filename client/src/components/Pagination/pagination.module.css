@@ -1,0 +1,17 @@
+.list{
+    display: flex;
+    flex-direction: row;
+    float:left;
+}
+.btn{
+    color: black;
+    background-color: #ff8c42;
+    border-color: #f9c784;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 20px;
+}
+
+.btn:hover{
+    color: #be0506
+}

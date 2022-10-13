@@ -1,0 +1,61 @@
+
+
+
+.inpName {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}
+
+.inpSum{
+    width: 50%;
+    height: 100px;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.inpHealth {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}
+
+.inpSteps{
+    width: 50%;
+    height: 100px;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    resize: none;
+
+}
+
+.diets{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}
+
+.btn{
+    color: black;
+    background-color: #ff8c42;
+    border-color: #f9c784;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 20px;
+}
+.btn:hover{
+    color: #be0506
+}
+
+.img {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}

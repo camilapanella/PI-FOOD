@@ -1,0 +1,21 @@
+.buttonSearch {
+    color: black;
+    background-color: #f9c784;
+    border-color: #f9c784;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.buttonSearch:hover {
+    color: #be0506;
+}
+
+.inputName {
+    border-radius: 2px;
+    height: 25px;
+    width: 140px;
+    margin-top: 0px;
+    padding-left: 5px;
+}
