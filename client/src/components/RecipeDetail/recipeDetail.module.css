@@ -1,56 +1,43 @@
 .dtBg {
-    background-color: #f9c784;
-    margin-left: 30px;
-    margin-right: 25px;
-    margin-top: 25px;
-    /* width: 310px;  */
+    background-color: #ff8c42;
+    margin: 25px 25px;
+    padding-right: 50px;
+    padding-left: 50px;
     overflow: hidden;
     border-radius: 18px;
     border: 1px solid black;
     display: flex;
     align-items: center;
-    /* justify-content: center */
+    text-align: center;
 }
-.dtBg:hover {
-    background-color: #fcaf58;    
+
+.btnHome{
+    color: #ff4a1c;
+    background-color: #140b09;
+    border-color: #140b09;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 20px;
+    position: relative;
+    float: left;
 }
+.btnHome:hover{
+    color: #be0506;
+    cursor: pointer;
+} 
 
 .info{
     color: black;
-    text-decoration: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }  
-.btnHome{
-    color: black;
-    background-color: #ff8c42;
-    border-color: #f9c784;
-    border-radius: 5px;
-    padding: 3px;
-    font-size: 20px;
-    position: relative;
-    float: right;
-}
-.btnHome:hover{
-    color: #be0506
-} 
-
-.btnX{
-    color: black;
-    background-color: #ff8c42;
-    border-color: #f9c784;
-    border-radius: 5px;
-    padding: 3px;
-    font-size: 20px;
-    position: relative;
-    float: right;
-}
-.btnX:hover{
-    color: #be0506
+.name {
+    text-align: center;
 }
 
 .img{
     display: block;
-    margin-left: auto;
+    margin-left:auto;
     margin-right: auto;
-    border: 3px solid black;
     border-radius: 5px;
+    border: 2px solid #be0506;
 }

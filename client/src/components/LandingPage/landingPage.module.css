@@ -1,7 +1,5 @@
 .landing {
-    background-image: url('../images/BG6.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
+    background-image: url('../images/bg8.jpg');
     background-position: inherit;
     position: absolute;
     top: 0px;
@@ -19,8 +17,8 @@
 }
 .landingbutton {
     color: black;
-    background-color: #f9c784;
-    border-color: #f9c784;
+    background-color: #ff4a1c;
+    border-color: #ff4a1c;
     border-radius: 5px;
     padding: 3px;
     font-size: 20px;
@@ -33,5 +31,5 @@
 }
 
 .landingbutton:hover {
-    color: #be0506;
+    color: #f0e4c3;
 }

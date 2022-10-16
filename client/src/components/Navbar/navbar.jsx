@@ -10,8 +10,8 @@ export default function NavBar() {
             <nav>
                 <ul>
                     <li className={styles.list}>
-                        <Link to="/home" >Home</Link>
-                        <Link to="/create" >Create recipe</Link>
+                        <Link className={styles.home} to="/home" >Home</Link>
+                        <Link className={styles.create} to="/create" >Create recipe</Link>
                     </li>
                 </ul>
                 <div>

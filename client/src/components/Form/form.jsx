@@ -76,7 +76,7 @@ export default function Form(props){
             <textarea className={styles.inpSteps} type="text" value = {input.steps} name = 'steps' 
               placeholder='Steps to follow...' onChange = {e => handleChange(e)} />
             <input className={styles.img} type='file' value = {input.image} name = 'image'
-            placeholder='Insert image' onChange = {e => handleChange(e)}
+             onChange = {e => handleChange(e)}
             />  
             <select className={styles.diets} defaultValue='Diets' onChange={(e) => handleSelect(e)}>
                 <option disabled>Diets</option>

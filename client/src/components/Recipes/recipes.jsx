@@ -7,15 +7,16 @@ export default function Recipes({image,name,id,diets,recipes}){
 return(
     
     <div className={styles.recipes}>
-     <Link to={`home/${id}`}>
-        <div className={styles.info}>
-     <h2>{name}</h2>
+     <Link to={`home/${id}`} className={styles.link}>
+    <div className={styles.info}>
+     <h2 className={styles.name}>{name}</h2>
      <img className={styles.img} src={image} alt="Not found" />
      <div className={styles.diets}>
         <h3>Diets :</h3>
         {diets.map(el => {
             return(
-                <h5 key={el}> {el.name ? el.name : el} </h5>
+                <li className={styles.listDiet} key={el}> {el.name ? el.name : el} </li>
+                
             )
         })}
      </div>

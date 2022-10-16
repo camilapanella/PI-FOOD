@@ -1,0 +1,23 @@
+.container{
+    margin-left: 80px;
+}
+
+
+.name{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}
+.score{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}
+.diet{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+}

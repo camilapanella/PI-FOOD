@@ -31,9 +31,20 @@ export const rootReducer = (state = initialState, action) => {
             diets: action.payload
         }
         case FILTER_BY_DIET:
+          const allRecipes = state.recipes; //back-up
+
+          let dietsApi = //guardo en una variable el resultado de
+            action.payload === "All" //-->Si el payload es all -->copia del back up
+              ? allRecipes // copia del back up
+              : allRecipes.filter(el => el.diets.includes(action.payload));
+
+          let dietsDb = allRecipes.filter(el => el.diets && el.diets.includes(action.payload)
+            );
+        
+          let diets1= dietsApi.concat(dietsDb);    
         return{
             ...state,
-            filtDiets: state.recipes.filter(el => el.diets.includes(action.payload))
+            recipes: diets1
         }
         case ORDER_BY_NAME:
             let sortedArr =

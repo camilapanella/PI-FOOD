@@ -1,17 +1,18 @@
 .list{
-    display: flex;
-    flex-direction: row;
-    float:left;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
 }
 .btn{
     color: black;
-    background-color: #ff8c42;
-    border-color: #f9c784;
+    background-color: #ff4a1c;
+    border-color: #ff4a1c;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
     font-size: 20px;
 }
 
 .btn:hover{
-    color: #be0506
+    color: #be0506;
+    cursor: pointer;
 }

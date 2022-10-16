@@ -1,23 +1,42 @@
 .recipes {
-    background-color: #f9c784;
+    background-color: #F88030;
     margin-left: 20px;
     margin-top: 25px;
     width: 350px;
     overflow: hidden;
     border-radius: 18px;
     border: 1px solid black;
+    
 }
 .recipes:hover {
-    background-color: #fcaf58;    
+    background-color: #ff8c42;    
+}
+
+.link{
+    text-decoration: none;
 }
 
 .info{
     color: black;
-    text-decoration: none;
     text-align: center;
-}  
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .img{
-    border: 2px solid black;
     border-radius: 10px;
+    vertical-align: text-bottom;
+}
+
+.diets{
+    color: black;
+    text-align:left;
+    margin-left: 25px;
+}
+
+.listDiet {
+    list-style-type:circle;
+    position: relative;
+    padding: 5px;
+    margin-bottom: 5px;
 }
 

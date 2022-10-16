@@ -8,7 +8,9 @@ export default function Landing() {
     <div className={styles.landing}>
     <br></br>
     <br></br>
-      <h1 className={styles.h1}>Welcome to your favorite recipe App!</h1>
+      <h1 className={styles.h1}>Welcome to your 
+      <br/>
+      favorite recipe App!</h1>
       <Link to='/home'>
       <br></br>
       <br></br>

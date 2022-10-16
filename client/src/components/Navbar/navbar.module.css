@@ -1,13 +1,21 @@
 .navbar {
-    background-color: #f5b82e;
+    background-color: #140b09;
     display: flex;
     justify-content: space-around;
-    padding: 8px;
+    padding: 4px;
 }
 .list{
     display: flex;
     justify-content: space-evenly;
-    color: black;
-    font-size: medium;
+}
+.home{
+    text-decoration: none;
+    color: #ff4a1c;
+    font-size: large;
+}
+.create{
+    text-decoration: none;
+    color: #ff4a1c;
+    font-size: large;
 
 }
