@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from './recipes.module.css'
 
-export default function Recipes({image,name,id,diets,recipes}){
+export default function Recipes({image,name,id,diets}){
 
 return(
     

@@ -1,10 +1,10 @@
-import {GET_RECIPES, GET_BY_NAME, GET_BY_ID, GET_DIETS, FILTER_BY_DIET, ORDER_BY_NAME, ORDER_BY_SCORE} from '../actions/actions'
+import {GET_RECIPES, GET_BY_NAME, GET_BY_ID, GET_DIETS, FILTER_BY_DIET, ORDER_BY_NAME, ORDER_BY_SCORE, POST_RECIPE} from '../actions/actions'
 
 const initialState = {
 recipes: [],
 details: [],
 diets: [],
-filtDiets: []
+allRecipes: []
 }
 
 
@@ -13,7 +13,8 @@ export const rootReducer = (state = initialState, action) => {
         case GET_RECIPES: 
         return{
             ...state,
-            recipes: action.payload
+            recipes: action.payload,
+            allRecipes: action.payload
         }
         case GET_BY_NAME:
         return{
@@ -30,18 +31,15 @@ export const rootReducer = (state = initialState, action) => {
             ...state,
             diets: action.payload
         }
+        case POST_RECIPE:
+        return{
+          ...state
+        }
         case FILTER_BY_DIET:
-          const allRecipes = state.recipes; //back-up
+          const allRecipes1 = state.allRecipes; 
 
-          let dietsApi = //guardo en una variable el resultado de
-            action.payload === "All" //-->Si el payload es all -->copia del back up
-              ? allRecipes // copia del back up
-              : allRecipes.filter(el => el.diets.includes(action.payload));
-
-          let dietsDb = allRecipes.filter(el => el.diets && el.diets.includes(action.payload)
-            );
-        
-          let diets1= dietsApi.concat(dietsDb);    
+          let diets1 = action.payload === "All" ? allRecipes1 : allRecipes1.filter(el => 
+            el.diets.find(e => e.includes(action.payload)));   
         return{
             ...state,
             recipes: diets1

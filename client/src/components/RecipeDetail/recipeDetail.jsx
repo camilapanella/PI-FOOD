@@ -18,6 +18,8 @@ useEffect(() => {
     dispatch(getDiets)
 }, [dispatch, id]);
 
+console.log(details)
+
 
     return(
         <div className={styles.dtBg}>
@@ -35,7 +37,7 @@ useEffect(() => {
                   Diets: 
                   <br/>
                     {details[0].diets &&
-                    details[0].diets.map(diet => diet.name ? diet.name : diet)}
+                    details[0].diets.map(diet => <li key={diet}>{diet.name ? diet.name : diet}</li>)}
                   </h3>
                   <h3 className={styles.summary}>Summary: <br/>
                   {details[0].summary ? details[0].summary.replace(/<[^>]+>/g, "") : null}</h3>     

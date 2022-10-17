@@ -7,8 +7,10 @@ const {YOUR_API_KEY} = process.env;
 
 const router = Router();
 
+//`https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&number=100&addRecipeInformation=true`
+
 const getApiInfo = async () => {
-    const dataAxios = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&number=100&addRecipeInformation=true`)
+    const dataAxios = await axios.get("https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5")
     const result = dataAxios.data.results
     let filt = result.map(el => {
         return{
@@ -78,7 +80,7 @@ router.get('/:id', async (req,res) => {
     let validate = id.includes("-");
     if(validate){
         let dbId = await Recipe.findByPk(id, { include: Diet })
-        if(dbId) return res.status(200).send(dbId)
+        if(dbId) return res.status(200).send([dbId])
     }
     if(id){
         let recipeId = await allRes.filter(el => el.id == id);
@@ -96,7 +98,7 @@ router.post('/', async (req, res) => {
 
         let dietDb = await Diet.findAll({ where:{ name:diets } })
         newRec.addDiet(dietDb)
-        res.status(200).send(newRec)
+        res.status(200).send('created successfully')
     } catch (error) {
         console.log(error.message)
     }

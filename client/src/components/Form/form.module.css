@@ -1,12 +1,25 @@
+.form{
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.nameCont{
+    width: 51%;
+}
 .inpName {
-    width: 50%;
+    width: 99%;
     padding: 12px 20px;
     margin: 8px 5px;
     box-sizing: border-box;
 }
 
+.sumCont{
+    width: 51%;
+}
 .inpSum{
-    width: 50%;
+    width: 99%;
     height: 100px;
     padding: 12px 20px;
     margin: 8px 5px;
@@ -14,10 +27,13 @@
     resize: none;
 }
 
+.healthCont{
+    width: 51%;
+}
 .inpHealth {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 5px;
+    width: 98%;
+    padding: 12px;
+    margin: 8px;
     box-sizing: border-box;
 }
 
@@ -47,7 +63,7 @@
     font-size: 20px;
 }
 .btn:hover{
-    color: #be0506
+    color: #be0506;
 }
 
 .img {
@@ -55,4 +71,14 @@
     padding: 12px 20px;
     margin: 8px 5px;
     box-sizing: border-box;
+}
+
+.errName{
+    color: #be0506;
+}
+.errSum{
+    color: #be0506;
+}
+.errHealth{
+    color: #be0506;
 }

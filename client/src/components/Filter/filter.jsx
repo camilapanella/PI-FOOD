@@ -40,7 +40,7 @@ export default function Filter({allDiets, setCurrPage, setOrder}){
             </select>
             <select className={styles.diet} placeholder='Filter by diet' onChange={e => handleFiltDiets(e)}>
             <option>Filter by diet</option>
-            {allDiets?.map(diet => <option value={diet.name}>{diet.name}</option>)}
+            {allDiets?.map(diet => <option key={diet.name}>{diet.name}</option>)}
             </select>
         </div>
 
