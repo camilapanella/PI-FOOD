@@ -8,6 +8,8 @@ export const FILTER_BY_DIET = 'FILTER_BY_DIET';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_SCORE = 'ORDER_BY_SCORE';
 export const POST_RECIPE = 'POST_RECIPE'
+export const DELETE_RECIPE = 'DELETE_RECIPE'
+export const FILTER_BY_CREATED = 'FILTER_BY_CREATED'
 
 export function getRecipes(){
     return async function(dispatch){
@@ -57,6 +59,13 @@ export function filterRecipesByDiet (payload){
     }
 }
 
+export function getCreatedRecipes(payload) {
+    return {
+      type: FILTER_BY_CREATED,
+      payload,
+    };
+  }
+
 export function orderByName (payload){
     return {
         type : ORDER_BY_NAME,
@@ -75,5 +84,15 @@ export function postRecipes (payload){
     return async function(dispatch){
         var json = await axios.post(`http://localhost:3001/recipes`,payload);
         return json
+    }
+}
+
+export function deleteRecipe (payload){
+    return async function(dispatch){
+        let deleted = await axios.delete(`http://localhost:3001/recipes/${payload}`)
+        return{
+            type: DELETE_RECIPE,
+            payload
+        }
     }
 }

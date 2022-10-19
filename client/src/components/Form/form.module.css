@@ -53,6 +53,10 @@
     margin: 8px 5px;
     box-sizing: border-box;
 }
+.diets:focus{
+    color:black;
+    background: transparent;
+}
 
 .btn{
     color: black;
@@ -81,4 +85,7 @@
 }
 .errHealth{
     color: #be0506;
+}
+.list{
+    width: 50%;
 }

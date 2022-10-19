@@ -9,13 +9,27 @@
 }
 
 .buttonSearch:hover {
-    color: #be0506;
+    color: #ffffff;
 }
 
 .inputName {
     border-radius: 2px;
     height: 25px;
     width: 140px;
-    margin-top: 0px;
     padding-left: 5px;
+}
+
+.btnAll {
+    color: black;
+    background-color: #ff4a1c;
+    border-color: #ff4a1c;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 20px;
+    margin-left:10px;
+    cursor: pointer;
+}
+
+.btnAll:hover {
+    color: #ffffff;
 }

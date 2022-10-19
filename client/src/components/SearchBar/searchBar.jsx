@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getRecipesByName } from "../../actions/actions";
+import { getRecipesByName, getRecipes } from "../../actions/actions";
 import styles from "./searchBar.module.css";
 
 
@@ -19,10 +19,14 @@ export default function SearchBar() {
   function handleSubmit(e) {
     e.preventDefault();
     if(!name) alert('Please enter a recipe name')
-    var result = dispatch(getRecipesByName(name.toLowerCase()))
-    if(!result.length) alert('Recipe not found')
-    setName("");
-    return result
+    else
+    dispatch(getRecipesByName(name.toLowerCase()))
+    setName("")
+  }
+
+  function handleReset(e){
+    e.preventDefault();
+    dispatch(getRecipes());
   }
 
   
@@ -33,6 +37,7 @@ export default function SearchBar() {
       <button className={styles.buttonSearch} type="submit" onClick={(e) => handleSubmit(e)}>
         Search
       </button>
+      <button className={styles.btnAll} onClick={(e) => handleReset(e)}>Show all recipes</button>
     </form>
   );
 }

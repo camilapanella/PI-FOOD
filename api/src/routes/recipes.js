@@ -46,7 +46,8 @@ const getDbInfo = async () => {
             summary:el.summary,
             healthScore:el.healthScore,
             diets:el.diets?.map(e=>e.name),
-            steps:el.steps
+            steps:el.steps,
+            createdInDb: el.createdInDb
             }
         })
         return response;
@@ -102,5 +103,13 @@ router.post('/', async (req, res) => {
     } catch (error) {
         console.log(error.message)
     }
+})
+
+router.delete('/:id', async (req, res) => {
+    const {id} = req.params;
+    if(typeof id === 'number') return res.status(400).send('Cannot delete this recipe')
+    await Recipe.destroy({ where: { id:id } })
+    res.status(200).send('success')
+
 })
 module.exports = router;

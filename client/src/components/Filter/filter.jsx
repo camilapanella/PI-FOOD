@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './filter.module.css'
-import { filterRecipesByDiet, orderByName, orderByScore } from '../../actions/actions'
+import { filterRecipesByDiet, orderByName, orderByScore, getCreatedRecipes } from '../../actions/actions'
 import { useDispatch } from 'react-redux'
 
 export default function Filter({allDiets, setCurrPage, setOrder}){
@@ -26,6 +26,12 @@ export default function Filter({allDiets, setCurrPage, setOrder}){
         setOrder(`${e.target.value}`)
     }
 
+    function handleFilterByCreated(e) {
+        // e.preventDefault();
+        dispatch(getCreatedRecipes(e.target.value));
+        setCurrPage(1);
+        setOrder(`${e.target.value}`)
+    }
     return(
         <div className={styles.container}>
             <select className={styles.name} placeholder='Order by name' onChange={e => handleOrderName(e)}>
@@ -41,6 +47,13 @@ export default function Filter({allDiets, setCurrPage, setOrder}){
             <select className={styles.diet} placeholder='Filter by diet' onChange={e => handleFiltDiets(e)}>
             <option>Filter by diet</option>
             {allDiets?.map(diet => <option key={diet.name}>{diet.name}</option>)}
+            </select>
+
+            <select className={styles.created} placeholder='Show recipes...' onChange={e => handleFilterByCreated(e)}>
+              <option>Show recipes</option>
+              <option value="all">All recipes</option>
+              <option value="api">Api recipes</option>
+              <option value="created">Your recipes</option>
             </select>
         </div>
 

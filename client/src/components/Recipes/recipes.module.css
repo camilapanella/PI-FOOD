@@ -25,7 +25,8 @@
 .img{
     border-radius: 10px;
     vertical-align: text-bottom;
-    
+    width:90%;
+    height:100%;
 }
 
 .diets{

@@ -72,33 +72,62 @@ export default function Form(props){
         }
     }
 
+    // const handleChecked = function (e) {
+	// 	if (e.target.checked) {
+	// 		setInput({
+	// 			...input,
+	// 			diets: [...input.diets, e.target.id],
+	// 		});
+	// 	} else {
+	// 		setInput({
+	// 			...input,
+	// 			diets: [...input.diets].filter(diet => e.target.id !== diet),
+	// 		});
+	// 	}
+	// };
 
     return(
         <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
             <h3>¡Create a new recipe!</h3>
+            
             <div className={styles.nameCont}>
             <input className={styles.inpName} type="text" value = {input.name} name = 'name' placeholder='Add name...' onChange = {e => handleChange(e)} />
             {errors.name && <span className={styles.errName}>{errors.name}</span>}
             </div>
+
             <div className={styles.sumCont}>  
             <textarea className={styles.inpSum} type="text" value = {input.summary} name = 'summary' 
               placeholder='Summary of your recipe...' onChange = {e => handleChange(e)} />
             {errors.summary && <span className={styles.errSum}>{errors.summary}</span>}  
             </div> 
+
             <div className={styles.healthCont}>     
             <input className={styles.inpHealth} type="number" value = {input.healthScore} name = 'healthScore' placeholder="Health score..."
                onChange = {e => handleChange(e)} />  
             {errors.healthScore && <span className={styles.errHealth}>{errors.healthScore}</span>}   
-            </div>   
+            </div>
+
             <textarea className={styles.inpSteps} type="text" value = {input.steps} name = 'steps' 
               placeholder='Steps to follow...' onChange = {e => handleChange(e)} />
-            <input className={styles.img} type='text' value ={input.image} name = 'image' placeholder="Image url"
-             onChange = {e => handleChange(e)}
-            />  
-            <select className={styles.diets} defaultValue='Diets' onChange={(e) => handleSelect(e)}>
+
+            <input className={styles.img} type='text' value ={input.image} name = 'image' placeholder="Image url" onChange = {e => handleChange(e)}/>
+
+            <select className={styles.diets} defaultValue='Diets' onChange={(e) => handleSelect(e)} >
                 <option disabled>Diets</option>
                 {dietsState?.map(diet => <option key={diet.name} value={diet.name}>{diet.name}</option>)}
             </select>
+            <ul className={styles.list}><li>{input.diets.map(e => e + '. ')}</li></ul>
+
+            {/* <div className='form-diets'>
+				{dietsState.length && dietsState.map((diet) => (
+				<label htmlFor={diet.id}>
+				<input key={diet.id} id={diet.id}
+				type='checkbox' name={diet.name}
+				onChange={handleChecked}/>
+				{diet.name}</label>
+			))}
+			</div> */}
+
             <button className={styles.btn} disabled={!input.name || !input.summary}>Submit</button>
         </form>
     )

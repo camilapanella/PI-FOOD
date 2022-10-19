@@ -1,4 +1,4 @@
-import {GET_RECIPES, GET_BY_NAME, GET_BY_ID, GET_DIETS, FILTER_BY_DIET, ORDER_BY_NAME, ORDER_BY_SCORE, POST_RECIPE} from '../actions/actions'
+import {GET_RECIPES, GET_BY_NAME, GET_BY_ID, GET_DIETS, FILTER_BY_DIET, ORDER_BY_NAME, ORDER_BY_SCORE, POST_RECIPE, DELETE_RECIPE, FILTER_BY_CREATED} from '../actions/actions'
 
 const initialState = {
 recipes: [],
@@ -43,7 +43,17 @@ export const rootReducer = (state = initialState, action) => {
         return{
             ...state,
             recipes: diets1
+        
         }
+        case FILTER_BY_CREATED:
+           var createdRecipes = action.payload === "created" ? state.allRecipes.filter((e) =>
+            e.createdInDb) : state.allRecipes.filter((e) => !e.createdInDb);
+          if (action.payload === "all") createdRecipes = state.allRecipes;
+        
+        return {
+        ...state,
+        recipes: createdRecipes,
+        };
         case ORDER_BY_NAME:
             let sortedArr =
             action.payload === "asc" ? state.recipes.sort(function (a, b) {
@@ -69,17 +79,21 @@ export const rootReducer = (state = initialState, action) => {
             recipes: sortedArr,
           };
         case ORDER_BY_SCORE:
-            let sortedByScore =
-        action.payload === "high" ? state.recipes.sort(function (a, b) {
+            let sortedByScore = action.payload === "high" ? state.recipes.sort(function (a, b) {
               return b.healthScore - a.healthScore;
-            })
-        : state.recipes.sort(function (a, b) {
+            }) : state.recipes.sort(function (a, b) {
               return a.healthScore - b.healthScore;
             });
         return {
         ...state,
         recipes: sortedByScore
         };
+        case DELETE_RECIPE:
+          return{
+            ...state,
+            allRecipes: state.allRecipes.filter(e => e.id !== action.payload),
+            recipes: state.recipes.filter(e => e.id !== action.payload)
+          }
         default: return {...state}
     }
 }
