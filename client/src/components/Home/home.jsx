@@ -5,6 +5,7 @@ import styles from './home.module.css'
 import Recipes from '../Recipes/recipes'
 import Paginate from '../Pagination/pagination';
 import Filter from '../Filter/filter';
+import Loading from '../Loading/loading';
 
 
 export default function Home(){

@@ -37,7 +37,7 @@ export default function SearchBar() {
       <button className={styles.buttonSearch} type="submit" onClick={(e) => handleSubmit(e)}>
         Search
       </button>
-      <button className={styles.btnAll} onClick={(e) => handleReset(e)}>Show all recipes</button>
+      <button className={styles.btnAll} onClick={(e) => handleReset(e)}>Refresh</button>
     </form>
   );
 }

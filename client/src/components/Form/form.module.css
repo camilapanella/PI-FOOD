@@ -1,5 +1,4 @@
 .form{
-
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -88,4 +87,23 @@
 }
 .list{
     width: 50%;
+}
+
+.diet{
+    float:left;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.btnDelete{
+    color: black;
+    background-color: #ff4a1c;
+    border-color: #ff4a1c;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.btnDelete:hover {
+    color: #ffffff;
 }

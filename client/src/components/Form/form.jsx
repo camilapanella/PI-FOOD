@@ -72,19 +72,13 @@ export default function Form(props){
         }
     }
 
-    // const handleChecked = function (e) {
-	// 	if (e.target.checked) {
-	// 		setInput({
-	// 			...input,
-	// 			diets: [...input.diets, e.target.id],
-	// 		});
-	// 	} else {
-	// 		setInput({
-	// 			...input,
-	// 			diets: [...input.diets].filter(diet => e.target.id !== diet),
-	// 		});
-	// 	}
-	// };
+    function handleDelete(e){
+        setInput({
+            ...input,
+            diets: input.diets.filter(diet => diet !== e)
+        })
+    }
+
 
     return(
         <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
@@ -116,19 +110,15 @@ export default function Form(props){
                 <option disabled>Diets</option>
                 {dietsState?.map(diet => <option key={diet.name} value={diet.name}>{diet.name}</option>)}
             </select>
-            <ul className={styles.list}><li>{input.diets.map(e => e + '. ')}</li></ul>
 
-            {/* <div className='form-diets'>
-				{dietsState.length && dietsState.map((diet) => (
-				<label htmlFor={diet.id}>
-				<input key={diet.id} id={diet.id}
-				type='checkbox' name={diet.name}
-				onChange={handleChecked}/>
-				{diet.name}</label>
-			))}
-			</div> */}
+            <div className={styles.handleDiets}>
+                {input.diets.map((el, index) => <div key={index}><li className={styles.diet}>{el}</li>
+                <input type='button' className={styles.btnDelete} onClick={()=>handleDelete(el)} value='X'/>
+                </div>)}
+            </div>
 
-            <button className={styles.btn} disabled={!input.name || !input.summary}>Submit</button>
+
+            <button className={styles.btn} disabled={!input.name || !input.summary} type='submit'>Submit</button>
         </form>
     )
 }  
