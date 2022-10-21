@@ -18,7 +18,7 @@ export default function Recipes({image,name,id,diets,createdInDb}){
 return(
     
     <div className={styles.recipes}>
-        {createdInDb ? <button onClick={(e) => handleDelete(e)}>Delete</button> : null}
+        {createdInDb ? <button className={styles.delete} onClick={(e) => handleDelete(e)}>Delete</button> : null}
      <Link to={`home/${id}`} className={styles.link}>
     <div className={styles.info}>
      <h2 className={styles.name}>{name}</h2>

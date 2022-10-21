@@ -34,12 +34,12 @@ export default function Filter({allDiets, setCurrPage, setOrder}){
     }
     return(
         <div className={styles.container}>
-            <select className={styles.name} placeholder='Order by name' onChange={e => handleOrderName(e)}>
-            <option>Order by name</option>
+            <select className={styles.name} placeholder='Order by alphabet' onChange={e => handleOrderName(e)}>
+            <option>Order by alphabet</option>
                 <option key= 'asc' value = 'asc'>A-Z</option>
                 <option key= 'desc' value = 'desc'>Z-A</option>
             </select>
-            <select className={styles.score} placeholder='Filter by score' onChange={e => handleOrderScore(e)}>
+            <select className={styles.score} placeholder='Order by score' onChange={e => handleOrderScore(e)}>
                 <option>Order by score</option>
                 <option key= 'high' value= 'high'>Highest health score</option>
                 <option key= 'low' value= 'low'>Lowest health score</option>

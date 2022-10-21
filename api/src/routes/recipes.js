@@ -2,7 +2,7 @@ const express = require('express')
 const { Router } = require('express');
 const axios = require('axios');
 require('dotenv').config();
-const { Recipe, Diet, Op } = require('../db');
+const { Recipe, Diet} = require('../db');
 const {YOUR_API_KEY} = process.env;
 
 const router = Router();
@@ -22,7 +22,8 @@ const getApiInfo = async () => {
             diets:el.diets?.map(e=>e),
             steps:el.analyzedInstructions.map(ins => {
             return ins.steps.map(st => st.step)
-           }).join(" \n")
+           }).join(" \n"),
+           createdInDb: false
         }
     })
     return filt
@@ -37,21 +38,22 @@ const getDbInfo = async () => {
             }
         }
     })
-    if(data){
-        let response = await data.map(el =>{
-            return{
-            id:el.id,
-            name:el.name,
-            image:el.image,
-            summary:el.summary,
-            healthScore:el.healthScore,
-            diets:el.diets?.map(e=>e.name),
-            steps:el.steps,
-            createdInDb: el.createdInDb
-            }
-        })
-        return response;
-    }
+    return data
+    // if(data){
+    //     let response = await data.map(el =>{
+    //         return{
+    //         id:el.id,
+    //         name:el.name,
+    //         image:el.image,
+    //         summary:el.summary,
+    //         healthScore:el.healthScore,
+    //         diets:el.diets?.map(e=>e.name),
+    //         steps:el.steps,
+    //         createdInDb: el.createdInDb
+    //         }
+    //     })
+    //     return data;
+    // }
 }
 
 const getAllRecipes = async () => {

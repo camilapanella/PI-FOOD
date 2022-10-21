@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import {getRecipes, getDiets} from '../../actions/actions'
+import {getRecipes, getDiets, postRecipes} from '../../actions/actions'
 import styles from './home.module.css'
 import Recipes from '../Recipes/recipes'
 import Paginate from '../Pagination/pagination';
@@ -31,6 +31,14 @@ useEffect(()=>{
   dispatch(getDiets());
 }, [])  
 
+const getPrevious  = () => {
+  setCurrPage(currPage - 1)
+}
+const getNext  = () => {
+  setCurrPage(currPage + 1)
+}
+
+if(currentRec.length){
 
 return(
       <div className={styles.home}>
@@ -47,10 +55,18 @@ return(
                     name={el.name}
                     image={el.image}
                     diets={el.diets}
+                    createdInDb={el.createdInDb}
                     />
                   })}
                 </div>
+                <div>
+                {currPage > 1 ? <button className={styles.prev} onClick={e => getPrevious(e)}>prev</button> : null}
          {allRecipes.length > 9 && <Paginate recPerPage={recPerPage} allRecipes={allRecipes.length} paginate={paginate} />}
+         {currPage < 12 ? <button className={styles.next} onClick={e => getNext(e)}>next</button> : null}
+         </div>
               </div>
     )
+  }else{
+    return(<Loading/>)
+  }
 }

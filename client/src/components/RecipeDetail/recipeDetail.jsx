@@ -4,6 +4,7 @@ import {getDiets, getRecipesById} from '../../actions/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import styles from './recipeDetail.module.css'
+import Loading from '../Loading/loading';
 
 
 
@@ -18,8 +19,8 @@ useEffect(() => {
     dispatch(getDiets)
 }, [dispatch, id]);
 
-console.log(details)
 
+if(details.length){
 
     return(
         <div className={styles.dtBg}>
@@ -51,4 +52,7 @@ console.log(details)
         </div>
       </div>
     )
+  }else{
+    return(<Loading/>)
+  }
 }

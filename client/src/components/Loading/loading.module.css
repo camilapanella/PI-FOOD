@@ -1,0 +1,17 @@
+.loadingCont{
+    background-image: url('../images/background\ 2.jpg');
+    background-position: inherit;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+.loading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font: small-caps bold 50px/1 sans-serif;
+    margin-top: 200px;
+    color: #ff4a1c;
+}

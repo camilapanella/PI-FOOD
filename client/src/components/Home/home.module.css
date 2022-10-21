@@ -1,6 +1,7 @@
 .home {
     background-image: url('../images/background\ 2.jpg');
-    background-position: inherit; 
+    background-position: inherit;
+    
 }
 
 
@@ -8,4 +9,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.prev{
+ float: left;
+}
+.next{
+    float: right;
 }

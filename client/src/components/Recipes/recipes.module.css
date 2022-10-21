@@ -41,4 +41,19 @@
     padding: 5px;
     margin-bottom: 5px;
 }
+.delete{
+    color: #ff4a1c;
+    background-color: black;
+    border-color: black;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 20px;
+    margin-left: 140px;
+    margin-top: 10px;
+}
+
+.delete:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
 
