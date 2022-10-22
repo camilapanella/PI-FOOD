@@ -14,7 +14,7 @@ export const FILTER_BY_CREATED = 'FILTER_BY_CREATED'
 
 export function getRecipes(){
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/recipes`);
+        var json = await axios.get(`/recipes`);
         return dispatch({
             type : GET_RECIPES,
             payload: json.data
@@ -24,7 +24,7 @@ export function getRecipes(){
 
 export function getRecipesByName (name){  
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/recipes?name=${name}`);
+        var json = await axios.get(`/recipes?name=${name}`);
     return dispatch( {
         type : GET_BY_NAME,
         payload: json.data
@@ -34,7 +34,7 @@ export function getRecipesByName (name){
 
 export function getRecipesById (id){
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/recipes/${id}`);
+        var json = await axios.get(`/recipes/${id}`);
     return dispatch( {
         type : GET_BY_ID,
         payload: json.data
@@ -44,7 +44,7 @@ export function getRecipesById (id){
 
 export function getDiets (){ 
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/diets`);
+        var json = await axios.get(`/diets`);
         return dispatch( {
             type : GET_DIETS,
             payload: json.data
@@ -82,14 +82,14 @@ export function orderByScore (payload){
 
 export function postRecipes (payload){
     return async function(dispatch){
-        var json = await axios.post(`http://localhost:3001/recipes`,payload);
+        var json = await axios.post(`/recipes`,payload);
         return json
     }
 }
 
 export function deleteRecipe (payload){
     return async function(dispatch){
-        await axios.delete(`http://localhost:3001/recipes/${payload}`)
+        await axios.delete(`/recipes/${payload}`)
         return{
             type: DELETE_RECIPE,
             payload
