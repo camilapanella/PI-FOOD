@@ -19,9 +19,9 @@ export default function SearchBar() {
   function handleSubmit(e) {
     e.preventDefault();
     if(!name) alert('Please enter a recipe name')
-    else
     dispatch(getRecipesByName(name.toLowerCase()))
     setName("")
+    
   }
 
   function handleReset(e){

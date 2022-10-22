@@ -1,18 +1,52 @@
 .home {
     background-image: url('../images/background\ 2.jpg');
     background-position: inherit;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
     
 }
-
-
 .card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.prev{
- float: left;
+.pagCont{
+    display: flex;
+    align-items: center;
+    
 }
+.prev{
+    color: black;
+    background-color: #ff4a1c;
+    border-color: #ff4a1c;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 25px;
+
+}
+
+.prev:hover{
+    color: #ffffff;
+    cursor: pointer;
+}
+
 .next{
-    float: right;
+    /* display: inline; */
+    color: black;
+    background-color: #ff4a1c;
+    border-color: #ff4a1c;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 25px;
+    
+}
+
+.next:hover{
+    color: #ffffff;
+    cursor: pointer;
 }

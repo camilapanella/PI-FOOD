@@ -10,11 +10,11 @@ export default function Paginate({recPerPage,allRecipes,paginate}){
         pageNumbers.push(i)
     }
     return (
-        <nav>
-            <ul className = 'paginate'>
+        <div>
+            <ul>
                 {
                     pageNumbers?.map(number => (
-                        <li className={styles.list} key ={number}>
+                        <li className={styles.list} key={number}>
                             <button className={styles.btn} onClick={()=>paginate(number)}>{number}</button>
 
                         </li>
@@ -22,7 +22,7 @@ export default function Paginate({recPerPage,allRecipes,paginate}){
             }
 
         </ul>
-    </nav>
+    </div>
 )
 
 }

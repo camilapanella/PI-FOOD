@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import {getRecipes, getDiets, postRecipes} from '../../actions/actions'
+import {getRecipes, getDiets} from '../../actions/actions'
 import styles from './home.module.css'
 import Recipes from '../Recipes/recipes'
 import Paginate from '../Pagination/pagination';
@@ -59,10 +59,10 @@ return(
                     />
                   })}
                 </div>
-                <div>
-                {currPage > 1 ? <button className={styles.prev} onClick={e => getPrevious(e)}>prev</button> : null}
+                <div className={styles.pagCont}>
          {allRecipes.length > 9 && <Paginate recPerPage={recPerPage} allRecipes={allRecipes.length} paginate={paginate} />}
-         {currPage < 12 ? <button className={styles.next} onClick={e => getNext(e)}>next</button> : null}
+         {currPage > 1 ? <button className={styles.prev} onClick={e => getPrevious(e)}>PREV</button> : null}
+         {allRecipes.length > currPage * recPerPage ? <button className={styles.next} onClick={e => getNext(e)}>NEXT</button> : null}
          </div>
               </div>
     )

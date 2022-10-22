@@ -36,9 +36,7 @@ export const rootReducer = (state = initialState, action) => {
           ...state
         }
         case FILTER_BY_DIET:
-          const allRecipes1 = state.allRecipes; 
-
-          let diets1 = action.payload === "All" ? allRecipes1 : allRecipes1.filter(el => 
+          let diets1 = state.allRecipes.filter(el => 
             el.diets.find(e => e.includes(action.payload)));   
         return{
             ...state,

@@ -79,7 +79,7 @@ export default function Form(props){
         })
     }
 
-
+    console.log(errors)
     return(
         <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
             <h3>¡Create a new recipe!</h3>
@@ -117,8 +117,8 @@ export default function Form(props){
                 </div>)}
             </div>
 
-
-            <button className={styles.btn} disabled={!input.name || !input.summary} type='submit'>Submit</button>
+            {!Object.keys(errors).length ? <button className={styles.btn} disabled={!input.name || !input.summary} type='submit'>Submit</button> : null}
+            
         </form>
     )
 }  

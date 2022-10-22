@@ -45,7 +45,6 @@ export function getRecipesById (id){
 export function getDiets (){ 
     return async function(dispatch){
         var json = await axios.get(`http://localhost:3001/diets`);
-         console.log(json.data);
         return dispatch( {
             type : GET_DIETS,
             payload: json.data
@@ -90,7 +89,7 @@ export function postRecipes (payload){
 
 export function deleteRecipe (payload){
     return async function(dispatch){
-        let deleted = await axios.delete(`http://localhost:3001/recipes/${payload}`)
+        await axios.delete(`http://localhost:3001/recipes/${payload}`)
         return{
             type: DELETE_RECIPE,
             payload
