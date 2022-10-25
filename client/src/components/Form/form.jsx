@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import img from '../images/photo.webp';
 import { postRecipes, getDiets } from "../../actions/actions";
 import styles from './form.module.css'
 
@@ -79,7 +78,7 @@ export default function Form(props){
         })
     }
 
-    console.log(errors)
+    
     return(
         <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
             <h3>¡Create a new recipe!</h3>

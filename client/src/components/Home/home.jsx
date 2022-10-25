@@ -12,15 +12,22 @@ export default function Home(){
 const dispatch = useDispatch();
 const allRecipes = useSelector(state => state.recipes);
 const allDiets = useSelector(state => state.diets)
+const err = useSelector(state => state.error)
 const [order, setOrder] = useState('')
 const [currPage, setCurrPage] = useState(1)
 const [recPerPage] = useState(9)
 const indexLastRecipe = currPage * recPerPage;
 const indexFirstRecipe = indexLastRecipe - recPerPage;
 const currentRec = allRecipes.slice(indexFirstRecipe, indexLastRecipe);
-const paginate = pageNumber => {
+const paginate = (pageNumber) => {
   setCurrPage(pageNumber)
 } 
+const getPrevious  = () => {
+  setCurrPage(currPage - 1)
+}
+const getNext  = () => {
+  setCurrPage(currPage + 1)
+}
 
 
 useEffect(() => {
@@ -29,16 +36,20 @@ useEffect(() => {
 
 useEffect(()=>{
   dispatch(getDiets());
-}, [])  
+}, [])
 
-const getPrevious  = () => {
-  setCurrPage(currPage - 1)
-}
-const getNext  = () => {
-  setCurrPage(currPage + 1)
-}
 
-if(currentRec.length){
+if(Object.keys(err).length){
+  return (<div className={styles.er}>Oops.. The recipe was not found
+  <br></br>
+  Please refresh the page 
+  <br></br>
+  or go to Create recipe 
+  <br />
+  to create it yourself!
+  </div>)
+}
+else if(currentRec.length){
 
 return(
       <div className={styles.home}>
@@ -46,6 +57,7 @@ return(
       allDiets={allDiets}
       setOrder={setOrder}
       setCurrPage={setCurrPage}
+      createdInDb={allRecipes?.map(e => e.createdInDb)}
       />
       <div className={styles.card}>
                   {currentRec?.map(el => {

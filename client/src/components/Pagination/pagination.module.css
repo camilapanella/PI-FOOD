@@ -19,3 +19,15 @@
     color: #ffffff;
     cursor: pointer;
 }
+.btn:focus{
+    background-color: black;
+    color: #ff4a1c;
+}
+.btn:active{
+    background-color: black;
+    color: #ff4a1c;
+}
+.btn:target{
+    background-color: black;
+    color: #ff4a1c;
+}

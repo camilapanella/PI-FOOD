@@ -39,21 +39,7 @@ const getDbInfo = async () => {
         }
     })
     return data
-    // if(data){
-    //     let response = await data.map(el =>{
-    //         return{
-    //         id:el.id,
-    //         name:el.name,
-    //         image:el.image,
-    //         summary:el.summary,
-    //         healthScore:el.healthScore,
-    //         diets:el.diets?.map(e=>e.name),
-    //         steps:el.steps,
-    //         createdInDb: el.createdInDb
-    //         }
-    //     })
-    //     return data;
-    // }
+  
 }
 
 const getAllRecipes = async () => {
@@ -72,7 +58,7 @@ router.get('/', async(req, res) => {
             return el.name.toLowerCase().includes(name.toLowerCase())
         })
     if(recByName.length) return res.status(200).send(recByName)
-    else return res.status(400).send('This recipe does not exist')
+    if(!recByName.length) return res.json({msg: 'Recipe not found'}).status(404)
     }
     res.status(200).send(allRecipes)
 })
@@ -94,16 +80,15 @@ router.get('/:id', async (req,res) => {
 
 
 router.post('/', async (req, res) => {
-    const {id,name,image,summary,healthScore,steps, diets} = req.body
+    const {name,image,summary,healthScore,steps, diets} = req.body
     try {
         if(!name || !summary) return res.status(400).send('Mandatory data missing')
-        const newRec = await Recipe.create({id,name,image,summary, healthScore, steps})
-
+        const newRec = await Recipe.create({name,image,summary, healthScore, steps})
         let dietDb = await Diet.findAll({ where:{ name:diets } })
         newRec.addDiet(dietDb)
         res.status(200).send('created successfully')
     } catch (error) {
-        console.log(error.message)
+        res.status(404).send(error.message)
     }
 })
 

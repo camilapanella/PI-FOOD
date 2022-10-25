@@ -106,4 +106,5 @@
 }
 .btnDelete:hover {
     color: #ffffff;
+    cursor: pointer;
 }

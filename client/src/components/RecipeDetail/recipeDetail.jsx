@@ -1,6 +1,6 @@
 import { React , useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {getDiets, getRecipesById} from '../../actions/actions';
+import { getRecipesById,clearDetail } from '../../actions/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import styles from './recipeDetail.module.css'
@@ -16,8 +16,9 @@ const details = useSelector(state => state.details);
 const { id } = useParams()
 useEffect(() => {
     dispatch(getRecipesById(id));
-    dispatch(getDiets)
-}, [dispatch, id]);
+    return () => dispatch(clearDetail())
+}, []);
+
 
 
 if(details.length){

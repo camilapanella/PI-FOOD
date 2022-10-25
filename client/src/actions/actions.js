@@ -10,6 +10,7 @@ export const ORDER_BY_SCORE = 'ORDER_BY_SCORE';
 export const POST_RECIPE = 'POST_RECIPE'
 export const DELETE_RECIPE = 'DELETE_RECIPE'
 export const FILTER_BY_CREATED = 'FILTER_BY_CREATED'
+export const CLEAR_DETAIL = 'CLEAR_DETAIL'
 
 
 export function getRecipes(){
@@ -40,6 +41,11 @@ export function getRecipesById (id){
         payload: json.data
     })
 }
+}
+export function clearDetail(){
+    return{
+        type: CLEAR_DETAIL,
+    }
 }
 
 export function getDiets (){ 

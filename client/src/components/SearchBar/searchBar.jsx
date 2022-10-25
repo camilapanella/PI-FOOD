@@ -12,7 +12,7 @@ export default function SearchBar() {
 
   
   function handleInputChange(e) {
-    e.preventDefault();
+    // e.preventDefault();
     setName(e.target.value);
   }
 
@@ -24,20 +24,19 @@ export default function SearchBar() {
     
   }
 
-  function handleReset(e){
-    e.preventDefault();
+  function handleReset(){
     dispatch(getRecipes());
   }
 
   
     
   return (
-    <form>
-      <input className={styles.inputName} type="text" placeholder="Search recipe..." onChange={(e) => handleInputChange(e)} />
+    <div>
+      <input className={styles.inputName} type="text" placeholder="Search recipe..." value={name} onChange={(e) => handleInputChange(e)} />
       <button className={styles.buttonSearch} type="submit" onClick={(e) => handleSubmit(e)}>
         Search
       </button>
       <button className={styles.btnAll} onClick={(e) => handleReset(e)}>Refresh</button>
-    </form>
+    </div>
   );
 }

@@ -50,3 +50,11 @@
     color: #ffffff;
     cursor: pointer;
 }
+.er{
+    background-image: url('../images/background\ 2.jpg');
+    font: small-caps bold 50px/1 sans-serif;
+    color: #be0506;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}

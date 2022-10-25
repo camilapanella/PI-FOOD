@@ -1,10 +1,11 @@
-import {GET_RECIPES, GET_BY_NAME, GET_BY_ID, GET_DIETS, FILTER_BY_DIET, ORDER_BY_NAME, ORDER_BY_SCORE, POST_RECIPE, DELETE_RECIPE, FILTER_BY_CREATED} from '../actions/actions'
+import {GET_RECIPES, GET_BY_NAME, GET_BY_ID, GET_DIETS, FILTER_BY_DIET, ORDER_BY_NAME, ORDER_BY_SCORE, POST_RECIPE, DELETE_RECIPE, FILTER_BY_CREATED, CLEAR_DETAIL} from '../actions/actions'
 
 const initialState = {
 recipes: [],
 details: [],
 diets: [],
-allRecipes: []
+allRecipes: [],
+error: {}
 }
 
 
@@ -14,18 +15,32 @@ export const rootReducer = (state = initialState, action) => {
         return{
             ...state,
             recipes: action.payload,
-            allRecipes: action.payload
+            allRecipes: action.payload,
+            error: {}
         }
         case GET_BY_NAME:
-        return{
+          if(action.payload.msg){
+            return{
+              ...state,
+              error: action.payload
+            }
+          }else{
+            return{
             ...state,
-            recipes: action.payload
-        }
+            recipes: action.payload,
+            error: {}
+            }
+          }
         case GET_BY_ID:
         return{
             ...state,
             details: action.payload
         }
+        case CLEAR_DETAIL:
+          return{
+            ...state,
+            details: []
+          }
         case GET_DIETS:
         return{
             ...state,
@@ -33,14 +48,21 @@ export const rootReducer = (state = initialState, action) => {
         }
         case POST_RECIPE:
         return{
-          ...state
+          ...state, 
+          error: {}
         }
         case FILTER_BY_DIET:
-          let diets1 = state.allRecipes.filter(el => 
-            el.diets.find(e => e.includes(action.payload)));   
+          let allR = state.allRecipes
+          let diets1; 
+          if(action.payload === 'vegetarian'){ 
+            diets1 = allR.filter(el => el.diets.includes(`lacto ovo ${action.payload}`) || el.diets.find(e => e.name === action.payload))
+          }else{
+              diets1 = allR.filter(el => el.diets.includes(action.payload) || el.diets.find(e => e.name === action.payload));
+            }
+          
         return{
             ...state,
-            recipes: diets1
+            recipes: action.payload === 'all' ? allR : diets1
         
         }
         case FILTER_BY_CREATED:

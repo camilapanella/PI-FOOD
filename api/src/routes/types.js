@@ -8,7 +8,7 @@ const addDiets = async () => {
     const types = [{name: 'gluten free'},
     {name: 'ketogenic'},
     {name: 'vegetarian'},
-    {name: 'lacto-vegetarian'},
+    {name: 'fodmap friendly'},
 	{name: 'lacto ovo vegetarian'},
     {name: 'vegan'},
     {name: 'pescatarian'},
