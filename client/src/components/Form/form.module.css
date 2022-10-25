@@ -67,8 +67,15 @@
 }
 .btn:hover{
     color: #be0506;
+    cursor: pointer;
 }
-
+.btn:disabled{
+    color:gray;
+    background-color: black;
+    border-color: black;
+    text-decoration: dashed;
+    cursor: not-allowed;
+}
 .img {
     width: 50%;
     padding: 12px 20px;

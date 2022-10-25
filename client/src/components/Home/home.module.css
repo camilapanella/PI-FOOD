@@ -1,9 +1,7 @@
 .home {
     background-image: url('../images/background\ 2.jpg');
     background-position: inherit;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center; */
+    height: 100%;
     
 }
 .card {
@@ -34,7 +32,6 @@
 }
 
 .next{
-    /* display: inline; */
     color: black;
     background-color: #ff4a1c;
     border-color: #ff4a1c;
@@ -52,9 +49,16 @@
 }
 .er{
     background-image: url('../images/background\ 2.jpg');
+    height: 100%;
+    background-position: inherit;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
     font: small-caps bold 50px/1 sans-serif;
     color: #be0506;
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 98px;
 }

@@ -40,14 +40,14 @@ useEffect(()=>{
 
 
 if(Object.keys(err).length){
-  return (<div className={styles.er}>Oops.. The recipe was not found
+  return (<h1 className={styles.er}>Oops.. The recipe was not found
   <br></br>
   Please refresh the page 
   <br></br>
   or go to Create recipe 
   <br />
   to create it yourself!
-  </div>)
+  </h1>)
 }
 else if(currentRec.length){
 

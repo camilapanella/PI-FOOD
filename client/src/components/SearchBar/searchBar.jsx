@@ -31,12 +31,12 @@ export default function SearchBar() {
   
     
   return (
-    <div>
+    <form>
       <input className={styles.inputName} type="text" placeholder="Search recipe..." value={name} onChange={(e) => handleInputChange(e)} />
       <button className={styles.buttonSearch} type="submit" onClick={(e) => handleSubmit(e)}>
         Search
       </button>
       <button className={styles.btnAll} onClick={(e) => handleReset(e)}>Refresh</button>
-    </div>
+    </form>
   );
 }
