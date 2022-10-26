@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.css';
-import SearchBar from '../SearchBar/searchBar.jsx';
 
 
 export default function NavBar() {
@@ -15,7 +14,6 @@ export default function NavBar() {
                     </li>
                 </ul>
                 <div>
-                <SearchBar/>
                 </div>
             </nav>
         </div>

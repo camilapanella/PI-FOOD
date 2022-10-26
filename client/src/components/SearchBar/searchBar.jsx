@@ -6,13 +6,12 @@ import styles from "./searchBar.module.css";
 
 
 
-export default function SearchBar() {
+ export default function SearchBar({setCurrPage}) {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
 
   
   function handleInputChange(e) {
-    // e.preventDefault();
     setName(e.target.value);
   }
 
@@ -21,6 +20,7 @@ export default function SearchBar() {
     if(!name) alert('Please enter a recipe name')
     dispatch(getRecipesByName(name.toLowerCase()))
     setName("")
+    setCurrPage(1)
     
   }
 
@@ -29,7 +29,6 @@ export default function SearchBar() {
   }
 
   
-    
   return (
     <form>
       <input className={styles.inputName} type="text" placeholder="Search recipe..." value={name} onChange={(e) => handleInputChange(e)} />

@@ -6,6 +6,7 @@ import Recipes from '../Recipes/recipes'
 import Paginate from '../Pagination/pagination';
 import Filter from '../Filter/filter';
 import Loading from '../Loading/loading';
+import SearchBar from '../SearchBar/searchBar';
 
 
 export default function Home(){
@@ -53,6 +54,11 @@ else if(currentRec.length){
 
 return(
       <div className={styles.home}>
+        <div className={styles.search}>
+        <SearchBar
+        setCurrPage={setCurrPage}
+      />
+        </div>
       <Filter
       allDiets={allDiets}
       setOrder={setOrder}
@@ -68,6 +74,7 @@ return(
                     image={el.image}
                     diets={el.diets}
                     createdInDb={el.createdInDb}
+                    healthScore={el.healthScore}
                     />
                   })}
                 </div>

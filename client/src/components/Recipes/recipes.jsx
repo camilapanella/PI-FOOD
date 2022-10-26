@@ -4,7 +4,7 @@ import styles from './recipes.module.css'
 import { deleteRecipe } from "../../actions/actions";
 import { useDispatch } from 'react-redux';
 
-export default function Recipes({image,name,id,diets,createdInDb}){
+export default function Recipes({image,name,id,diets,createdInDb, healthScore}){
 
     const dispatch = useDispatch()
 
@@ -32,6 +32,7 @@ return(
             )
         })}
      </div>
+     <h3>Health score: {healthScore}</h3>
      </div>
      </Link>
     </div>

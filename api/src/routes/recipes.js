@@ -6,8 +6,7 @@ const { Recipe, Diet} = require('../db');
 const {YOUR_API_KEY} = process.env;
 
 const router = Router();
-
-//`https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&number=100&addRecipeInformation=true`
+// `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY}&number=100&addRecipeInformation=true`
 
 const getApiInfo = async () => {
     const dataAxios = await axios.get("https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5")

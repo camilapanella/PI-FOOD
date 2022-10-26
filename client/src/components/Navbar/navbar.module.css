@@ -7,11 +7,13 @@
 .list{
     display: flex;
     justify-content: space-evenly;
+    
 }
 .home{
     text-decoration: none;
     color: #ff4a1c;
     font-size: large;
+    margin-right: 20px;
 }
 .create{
     text-decoration: none;

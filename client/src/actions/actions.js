@@ -21,6 +21,7 @@ export function getRecipes(){
             payload: json.data
         })
     }
+  
 }
 
 export function getRecipesByName (name){  
